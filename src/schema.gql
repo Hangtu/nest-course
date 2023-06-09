@@ -1,0 +1,82 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  id: Int!
+  description: String!
+  done: Boolean!
+}
+
+type TodoGenerado {
+  """Example field (placeholder)"""
+  exampleField: Int
+}
+
+type Item {
+  id: ID!
+  name: String!
+  quantity: Float!
+  quantityUnits: String
+}
+
+type Query {
+  helloWorld: String!
+  randomNumber: Float!
+
+  """This is a description"""
+  randomFromZeroTo(to: Int): Int!
+  todos(status: Boolean): [Todo!]!
+  todo(id: Int!): Todo!
+  todoGenerado(id: Int!): TodoGenerado!
+  items: [Item!]!
+  item(id: ID!): Item!
+}
+
+type Mutation {
+  createTodo(createTodoInput: CreateTodoInput!): Todo!
+  updateTodo(updateTodoInput: UpdateTodoInput!): Todo!
+  removeTodo(id: Int!): Boolean!
+  createTodoGenerado(createTodoGeneradoInput: CreateTodoGeneradoInput!): TodoGenerado!
+  updateTodoGenerado(updateTodoGeneradoInput: UpdateTodoGeneradoInput!): TodoGenerado!
+  removeTodoGenerado(id: Int!): TodoGenerado!
+  createItem(createItemInput: CreateItemInput!): Item!
+  updateItem(updateItemInput: UpdateItemInput!): Item!
+  removeItem(id: String!): Item!
+}
+
+input CreateTodoInput {
+  """What needs to be done"""
+  description: String!
+}
+
+input UpdateTodoInput {
+  """What needs to be done"""
+  id: Int!
+  description: String
+  done: Boolean
+}
+
+input CreateTodoGeneradoInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateTodoGeneradoInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateItemInput {
+  name: String!
+  quantity: Float!
+  quantityUnits: String
+}
+
+input UpdateItemInput {
+  id: ID!
+  name: String!
+  quantity: Float
+  quantityUnits: String
+}
